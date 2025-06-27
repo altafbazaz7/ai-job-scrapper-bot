@@ -7,6 +7,8 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from webdriver_manager.chrome import ChromeDriverManager
+import os
+from dotenv import load_dotenv
 
 # -------- CONFIG --------
 job_roles = [
@@ -18,7 +20,8 @@ job_roles = [
     "next js"
 ]
 max_pages = 3
-webhook_url = "https://discord.com/api/webhooks/1387047250999382129/SsbSbjfJwfOePob-e3Ox5HAsgQ6zykxqCMhpgGoS2DcbYrDPIpJ9cfLxjgPH0Pgo6n_s"
+load_dotenv()
+webhook_url = os.getenv("WEBHOOK")
 sent_jobs_file = "sent_jobs.txt"
 NODE_SERVER_URL = "http://localhost:3000/evaluate"
 # ------------------------
